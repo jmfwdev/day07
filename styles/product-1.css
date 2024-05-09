@@ -21,6 +21,8 @@
 
 /* Typography
 --------------------------------------------- */
+
+
 body {
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 1rem;
@@ -92,6 +94,7 @@ a:active {
 --------------------------------------------- */
 .site-header {
 	background-color: #fffacd;
+	max-width: 120rem;
 }
 
 .site-header-width {
@@ -114,7 +117,12 @@ a.site-name {
 }
 
 .site-navigation {
-	
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 30;
+
 }
 
 .site-navigation ul {
@@ -139,17 +147,20 @@ a.site-name {
 @media (min-width: 50em) {
 
 	.site-header {
-		
+		position: sticky;
+		top: 0;
+		z-index: 30;
 	}
 
 	.site-navigation {
 		padding: 0 1rem;
 		flex: 1 1 auto;
-
+		position: static;
+		width: 100%;
 	}
-
+	
 	.site-navigation ul {
-		
+		width: 10%;
 	}
 
 	.site-navigation a {
@@ -157,6 +168,15 @@ a.site-name {
 		line-height: 4.5rem;
 		padding: 0 1rem;
 	}
+
+	.site-name {
+		width: 100%
+	}
+
+	.site-header-width {
+		display: flex;
+	}
+
 
 }
 
@@ -181,10 +201,17 @@ a.site-name {
 	}
 
 	.col-right {
+		width: 30%;
+		position: sticky;
+		left: 120rem;
+		margin-top: 1rem;
+		top: 6rem;
 
 	}
 	
 	.col-left {
+		margin-top: -14rem;
+		width: 70%;
 
 	}
 
@@ -218,13 +245,14 @@ a.cart-link {
 
 .float-left {
 	display: block;
-	margin: 1.5rem auto;
+	margin: .5rem auto .5rem;
 }
 
 @media (min-width: 31.25em) {
 
 	.float-left {
-		
+		float: left;
+		padding-right: 1rem;
 	}
 
 }
@@ -234,23 +262,48 @@ a.cart-link {
 	.collage {
 		width: 100%;
 		height: 38rem;
+		position: relative;
 		
 	}
 
 	.lemon-photo-1 {
-		
+		position: absolute;
+		top: 4rem;
+		left: 4rem;
+	}
+
+	.lemon-photo-1:hover {
+		z-index: 10;
 	}
 
 	.lemon-photo-2 {
-		
+		position: absolute;
+		bottom: 4rem;
+		left: 6rem;	
+	}
+
+	.lemon-photo-2:hover {
+		z-index: 10;
 	}
 
 	.lemon-photo-3 {
-		
+		position: absolute;
+		top: 3rem;
+		right: 3rem;	
+	}
+
+	.lemon-photo-3:hover {
+		z-index: 10;
 	}
 
 	.lemon-photo-4 {
-		
+		position: absolute;
+		bottom: 3rem;
+		right: 6rem;
+	}
+
+	.lemon-photo-4:hover {
+		z-index: 10;
 	}
 
 }
