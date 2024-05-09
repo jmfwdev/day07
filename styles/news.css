@@ -258,6 +258,14 @@ a:active {
 article {
 	border-bottom: 1px solid #888888;
 	margin-bottom: 1.5rem;
+	/* clear: both; */
+	/* we are going to use clearfix hack instead */
+}
+
+article::after {
+	content: "";
+	display: block;
+	clear: both;
 }
 
 article footer {
@@ -265,10 +273,14 @@ article footer {
 }
 
 .alignleft {
+	float: left;
+	margin: 0 1rem 1rem 0;
 
 }
 
 .alignright {
+	float: right;
+	margin: 0 0 1rem 1rem;
 }
 
 
